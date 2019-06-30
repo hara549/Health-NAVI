@@ -5,7 +5,8 @@ $(function () {
     //google map
     var map;
     var service;
-    var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
+    //初期値を東京都渋谷区とする
+    var pyrmont = new google.maps.LatLng(-35.658034, 139.701636);
     createMap(pyrmont)
 
 
@@ -56,7 +57,7 @@ $(function () {
         });
 
         var placename = place.name;
-        // 吹き出しに施設の名前を埋め込む		  
+        // 吹き出しに施設の名前を埋め込む
         var contentString = `<div class="sample"><p id="place_name">${placename}</p></div>`;
 
         // 吹き出し
@@ -96,7 +97,7 @@ $(function () {
 
         function callback(results, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
-                //取得した病院情報をそれぞれcreateMarkerに入れて、マーカーを作成  
+                //取得した病院情報をそれぞれcreateMarkerに入れて、マーカーを作成
                 for (var i = 0; i < results.length; i++) {
                     var place = results[i];
                     //console.log(place)
