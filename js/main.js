@@ -6,7 +6,7 @@ $(function () {
     var map;
     var service;
     //‰Šú’l‚ğ“Œ‹“sa’J‹æ‚Æ‚·‚é
-    var pyrmont = new google.maps.LatLng(-35.658034, 139.701636);
+    var pyrmont = new google.maps.LatLng(35.658034, 139.701636);
     createMap(pyrmont)
 
 
