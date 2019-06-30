@@ -1,0 +1,174 @@
+/*common*/
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Kosugi Maru', sans-serif;
+    margin-top: 75px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+li {
+    list-style: none;
+}
+
+.link {
+    color: #0000cd;
+}
+
+    .link:hover {
+        opacity: 0.7;
+    }
+
+table {
+    margin: 0 auto;
+    width: 80%;
+}
+
+table,th,td {
+    border: 2px solid #fff;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+    font-weight: normal;
+    height: 30px;
+    background-color: rgba(51,185,19,0.3);
+    color: #333;
+}
+
+td {
+    height: 25px;
+    background-color: #f5f5f5;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+/*header*/
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #33b913;
+    color: #fff;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.4);
+    font-family: 'Alegreya Sans SC', sans-serif;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    opacity: 0.9;
+}
+
+    header h1 {
+        font-size: 34px;
+        text-align: center;
+        margin: 0;
+        padding: 6px 0;
+        font-weight: bold;
+    }
+
+/*index.html*/
+.department {
+    width: 90%;
+    margin: 20px 0;
+}
+
+#select_dep {
+    margin-bottom: 20px;
+}
+
+#serch_dep {
+    margin-bottom: 20px;
+}
+
+#getcurrentlocation {
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 7px;
+}
+
+#serchbox {
+    border-radius: 5px;
+    height: 35px;
+    padding: 0;
+    width: 50%;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
+
+/*search.html*/
+.tab {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    margin: 0 auto 3px auto;
+}
+
+    .tab li {
+        background: #fff;
+        padding: 5px 25px;
+        float: left;
+        margin-right: 2px;
+        cursor: pointer;
+        opacity: 0.5;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+        .tab li.select {
+            opacity: 1;
+            border-bottom: 3px solid #33b913;
+        }
+
+.content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+    .content li {
+        padding: 20px;
+    }
+
+.hide {
+    display: none;
+}
+
+.subtitle {
+    width: 80%;
+    border-left: 5px solid #33b913;
+    font-size: 22px;
+    margin: 20px auto;
+    padding-left: 5px;
+}
+
+.index {
+}
+
+    .index td {
+        height: 50px;
+        background-color: #fff;
+        text-align: center;
+        color: #cdcdcd;
+        border: 1px solid #c0c0c0;
+        cursor: pointer;
+    }
+
+        .index td:hover {
+            background-color: #f5f5f5;
+            color: #808080;
+        }
+

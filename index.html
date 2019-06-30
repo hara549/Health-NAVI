@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map3</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/drawer.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/kokoro.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+1p">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body class="drawer drawer--left">
+    <header>
+        <button type="button" class="drawer-toggle drawer-hamburger">
+            <span class="sr-only">toggle navigation</span>
+            <span class="drawer-hamburger-icon"></span>
+        </button>
+        <nav class="drawer-nav">
+            <ul class="drawer-menu">
+                <li><a href="#">チュートリアル</a></li>
+                <li><a href="search.html">診療科検索</a></li>
+            </ul>
+        </nav>
+        <h1>Health NAVI</h1>
+    </header>
+    <div class="container">
+        <div class="department">
+            <div id="select_dep">
+                <h2><i class="fas fa-chevron-circle-right" style="color: rgba(51,185,19,0.9)"></i> 診療科選択</h2>
+                <select>
+                    <option value="Cardiology">循環器内科</option>
+                    <option value="RespiratoryMedicine">呼吸器内科</option>
+                    <option value="Gastroenterology">消化器内科</option>
+                    <option value="Hematology">血液内科</option>
+                    <option value="EndocrinologyandMetabolism">糖尿病内分泌内科</option>
+                    <option value="NephrologyandDiabetes">腎臓内科</option>
+                    <option value="Neurology">神経内科</option>
+                    <option value="MedicalOncology">腫瘍内科</option>
+                    <option value="Pediatrics">小児科</option>
+                    <option value="Psychiatry">精神科</option>
+                    <option value="Dermatology">皮膚科</option>
+                    <option value="GastrointestinalSurgery">消化器外科</option>
+                    <option value="GeneralSurgery">乳腺・一般外科</option>
+                    <option value="CardiovascularSurgery">心臓血管外科</option>
+                    <option value="ThoracicSurgery">呼吸器外科</option>
+                    <option value="Orthopaedic Surgery">整形外科</option>
+                    <option value="Neurosurgery">脳神経外科</option>
+                    <option value="torhinolaryngology-HeadandNeckSurgery">耳鼻咽喉科</option>
+                    <option value="MaternalandFetalMedicine">母子診療科</option>
+                    <option value="Female PelvicSugeryandReproductiveMedicine">女性診療科</option>
+                    <option value="Urology">泌尿器科</option>
+                    <option value="Ophthalmology">眼科</option>
+                    <option value="Anesthesiology">麻酔科</option>
+                    <option value="PainManagementClinic">ペインクリニック科</option>
+                    <option value="Radiology">放射線科</option>
+                    <option value="OralandMaxillofacialSurgery">歯科口腔外科</option>
+                    <option value="PhysicalMedicineandRehabilitation">リハビリテーション科</option>
+                    <option value="EmergencyandICU">救急・集中治療部</option>
+                    <option value="PrimaryCare">総合診療部・初期診断科</option>
+                    <option value="DepartmentofMedicalGenetics">臨床遺伝相談科</option>
+                    <option value="PlasticandReconstructiveSurgery">形成外科</option>
+                </select>
+            </div>
+            <div id="serch_dep">
+                <h2><i class="fas fa-chevron-circle-right" style="color: rgba(51,185,19,0.9)"></i> 診療科がわからない場合</h2>
+                <a class="link" href="#"><i class="fas fa-angle-double-right"></i>診療科検索</a>
+            </div>
+        </div>
+        <div class="map_serch">
+            <button id="getcurrentlocation">現在地から検索</button>
+            <input id="serchbox" type="text" name="serchbox" value="" placeholder="場所を指定して検索" />
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/drawer.min.js"></script>
+
+    <!-- google map api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqzZh1Jj0VfjsBrGhAQcFTarXj-NB5PZE&libraries=places" asyncdefer></script>
+    <!-- js -->
+    <script src="js/main.js" async></script>
+    <script>
+        $(function () {
+            //ドロワーメニュー
+            $('.drawer').drawer();
+        })
+    </script>
+
+
+</body>
+</html>
