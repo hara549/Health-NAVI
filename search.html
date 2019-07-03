@@ -20,8 +20,9 @@
         </button>
         <nav class="drawer-nav">
             <ul class="drawer-menu">
-                <li><a href="#">チュートリアル</a></li>
-                <li><a href="search.html">診療科検索</a></li>
+              <li><a href="index.html">トップ画面</a></li>
+              <li><a href="search.html">診療科検索</a></li>
+              <li><a href="#">チュートリアル</a></li>
             </ul>
         </nav>
         <h1>Health NAVI</h1>
@@ -35,256 +36,247 @@
         <ul class="content">
             <li>
                 <table>
-                    <tr><th>部位</th><th>症状</th><th colspan="2">診療科</th></tr>
-                    <tr><td rowspan="3">頭部</td><td>頭部・顔面の打撲</td><td colspan="2">脳神経外科</td></tr>
-                    <tr><td>頭痛</td><td>脳神経外科</td><td>神経内科</td></tr>
-                    <tr><td>めまい</td><td colspan="2">耳鼻咽喉科</td></tr>
-                    <tr><td rowspan="7">顔面</td><td>顔のしびれ・麻痺</td><td>神経内科</td><td>耳鼻咽喉科</td></tr>
-                    <tr><td>難聴</td><td colspan="2" rowspan="3">耳鼻咽喉科</td></tr>
+                    <tr><th class="part">部位</th><th class="symptoms">症状</th><th colspan="2" class="department_th">診療科</th></tr>
+                    <tr><td rowspan="3">頭部</td><td>頭部・顔面の打撲</td><td colspan="2" class="department" id="Neurosurgery">脳神経外科</td></tr>
+                    <tr><td>頭痛</td><td class="department" id="Neurosurgery">脳神経外科</td><td class="department" id="Neurology">神経内科</td></tr>
+                    <tr><td>めまい</td><td colspan="2" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
+                    <tr><td rowspan="7">顔面</td><td>顔のしびれ・麻痺</td><td class="department" id="Neurology">神経内科</td><td class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
+                    <tr><td>難聴</td><td colspan="2" rowspan="3" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
                     <tr><td>中耳炎</td></tr>
                     <tr><td>耳の中の傷</td></tr>
-                    <tr><td>鼻血</td><td colspan="2" rowspan="2">耳鼻咽喉科</td></tr>
+                    <tr><td>鼻血</td><td colspan="2" rowspan="2" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
                     <tr><td>鼻の中のできもの</td></tr>
-                    <tr><td>目の病気</td><td colspan="2">眼科</td></tr>
-                    <tr><td rowspan="3">頸部</td><td>喉の痛み</td><td colspan="2" rowspan="2">耳鼻咽喉科</td></tr>
+                    <tr><td>目の病気</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
+                    <tr><td rowspan="3">頸部</td><td>喉の痛み</td><td colspan="2" rowspan="2" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
                     <tr><td>声が嗄れる・声を出しづらい</td></tr>
-                    <tr><td>食べ物の飲下しがうまくいかない</td><td colspan="2">耳鼻咽喉科</td></tr>
-                    <tr><td rowspan="10">胸部</td><td>動悸</td><td colspan="2" rowspan="6">内科・循環器科</td></tr>
+                    <tr><td>食べ物の飲下しがうまくいかない</td><td colspan="2" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
+                    <tr><td rowspan="10">胸部</td><td>動悸</td><td colspan="2" rowspan="6" class="department" id="Cardiology">循環器内科</td></tr>
                     <tr><td>不整脈</td></tr>
                     <tr><td>胸部痛</td></tr>
                     <tr><td>高血圧</td></tr>
                     <tr><td>顔や足のむくみ</td></tr>
                     <tr><td>息苦しい</td></tr>
-                    <tr><td>乳房のしこり・痛み・分泌物</td><td colspan="2" rowspan="3">乳腺外科</td></tr>
+                    <tr><td>乳房のしこり・痛み・分泌物</td><td colspan="2" rowspan="3" class="department" id="Breastsurgery">乳腺外科</td></tr>
                     <tr><td>咳</td></tr>
                     <tr><td>痰</td></tr>
-                    <tr><td>呼吸が苦しい</td><td>呼吸器内科</td><td>内科・循環器科</td></tr>
-                    <tr><td rowspan="2">腰痛・背部</td><td>腰痛・背部通</td><td colspan="2">整形外科</td></tr>
-                    <tr><td>腰背部の激しい痛み</td><td>泌尿器科</td><td>整形外科</td></tr>
-                    <tr><td rowspan="7">腹部</td><td>腹痛</td><td>消化器内科</td><td>外科</td></tr>
-                    <tr><td>吐き気</td><td rowspan="3">消化器内科</td><td rowspan="3">外科</td></tr>
+                    <tr><td>呼吸が苦しい</td><td class="department" id="RespiratoryMedicine">呼吸器内科</td><td class="department" id="Cardiology">循環器内科</td></tr>
+                    <tr><td rowspan="2">腰痛・背部</td><td>腰痛・背部通</td><td colspan="2" class="department" id="OrthopaedicSurgery">整形外科</td></tr>
+                    <tr><td>腰背部の激しい痛み</td><td class="department" id="Urology">泌尿器科</td><td class="department" id="OrthopaedicSurgery">整形外科</td></tr>
+                    <tr><td rowspan="7">腹部</td><td>腹痛</td><td class="department" id="Gastroenterology">消化器内科</td><td class="department" id="Surgery">外科</td></tr>
+                    <tr><td>吐き気</td><td rowspan="3" class="department" id="Gastroenterology">消化器内科</td><td rowspan="3" class="department" id="Surgery">外科</td></tr>
                     <tr><td>嘔吐</td></tr>
                     <tr><td>下痢</td></tr>
-                    <tr><td>腹部のしこり</td><td colspan="2">外科</td></tr>
-                    <tr><td>排便時の痛み</td><td colspan="2">外科</td></tr>
-                    <tr><td>お産や女性特有の病気</td><td colspan="2">産婦人科</td></tr>
-                    <tr><td rowspan="4">下腹部</td><td>尿に血・膿が混じる</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>排尿時の痛み</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>脱腸</td><td colspan="2">外科</td></tr>
-                    <tr><td>下腹部のしこり</td><td>外科</td><td>産婦人科</td></tr>
-                    <tr><td>下肢</td><td>ふくらはぎのみみずばれ（静脈瘤）</td><td colspan="2">外科</td></tr>
-                    <tr><td rowspan="13">全身</td><td>頭部・顔面以外の打撲</td><td colspan="2">整形外科</td></tr>
-                    <tr><td>手・足の深い切り傷</td><td>外科</td><td>整形外科</td></tr>
-                    <tr><td>肩・首・手・足の痛み</td><td colspan="2" rowspan="2">整形外科</td></tr>
+                    <tr><td>腹部のしこり</td><td colspan="2" class="department" id="Surgery">外科</td></tr>
+                    <tr><td>排便時の痛み</td><td colspan="2" class="department" id="Surgery">外科</td></tr>
+                    <tr><td>お産や女性特有の病気</td><td colspan="2" class="department" id="ObstetricsandGynecology">産婦人科</td></tr>
+                    <tr><td rowspan="4">下腹部</td><td>尿に血・膿が混じる</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>排尿時の痛み</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>脱腸</td><td colspan="2" class="department" id="Surgery">外科</td></tr>
+                    <tr><td>下腹部のしこり</td><td class="department" id="Surgery">外科</td><td class="department" id="ObstetricsandGynecology">産婦人科</td></tr>
+                    <tr><td>下肢</td><td>ふくらはぎのみみずばれ（静脈瘤）</td><td colspan="2" class="department" id="Surgery">外科</td></tr>
+                    <tr><td rowspan="13">全身</td><td>頭部・顔面以外の打撲</td><td colspan="2" class="department" id="OrthopaedicSurgery">整形外科</td></tr>
+                    <tr><td>手・足の深い切り傷</td><td class="department" id="Surgery">外科</td><td class="department" id="OrthopaedicSurgery">整形外科</td></tr>
+                    <tr><td>肩・首・手・足の痛み</td><td colspan="2" rowspan="2" class="department" id="OrthopaedicSurgery">整形外科</td></tr>
                     <tr><td>関節の痛み</td></tr>
-                    <tr><td>リウマチ</td><td colspan="2">整形外科</td></tr>
-                    <tr><td>スポーツ外傷</td><td colspan="2">整形外科</td></tr>
-                    <tr><td>やけど</td><td colspan="2">外科</td></tr>
-                    <tr><td>ふるえ</td><td colspan="2" rowspan="3">神経内科</td></tr>
+                    <tr><td>リウマチ</td><td colspan="2" class="department" id="OrthopaedicSurgery">整形外科</td></tr>
+                    <tr><td>スポーツ外傷</td><td colspan="2" class="department" id="OrthopaedicSurgery">整形外科</td></tr>
+                    <tr><td>やけど</td><td colspan="2" class="department" id="Surgery">外科</td></tr>
+                    <tr><td>ふるえ</td><td colspan="2" rowspan="3" class="department" id="torhinolaryngology-HeadandNeckSurgery">神経内科</td></tr>
                     <tr><td>歩行時のふらつき</td></tr>
                     <tr><td>顔面のけいれん</td></tr>
-                    <tr><td>手・足の麻痺やしびれに対する診断・治療</td><td colspan="2">神経内科</td></tr>
-                    <tr><td>手・足の麻痺や失語に対する訓練</td><td colspan="2">リハビリテーション科</td></tr>
-                    <tr><td>皮膚のしこり</td><td colspan="2">外科</td></tr>
-                    <tr><td rowspan="5">その他</td><td>こどもの病気</td><td colspan="2">小児科</td></tr>
-                    <tr><td>健康診断時のデータ異常（血糖値、コレステロール値等）</td><td colspan="2">内科・循環器科</td></tr>
-                    <tr><td>こころの病気</td><td>診療内科</td><td>精神科・神経科</td></tr>
-                    <tr><td>腎臓の病気（むくみ、蛋白尿、血尿、腎不全、透析）</td><td colspan="2">腎臓内科</td></tr>
-                    <tr><td>血液の病気（貧血、血が止まりづらいなど）</td><td colspan="2">血液内科</td></tr>
+                    <tr><td>手・足の麻痺やしびれに対する診断・治療</td><td colspan="2" class="department" id="torhinolaryngology-HeadandNeckSurgery">神経内科</td></tr>
+                    <tr><td>手・足の麻痺や失語に対する訓練</td><td colspan="2" class="department" id="PhysicalMedicineandRehabilitation">リハビリテーション科</td></tr>
+                    <tr><td>皮膚のしこり</td><td colspan="2" class="department" id="Surgery">外科</td></tr>
+                    <tr><td rowspan="5">その他</td><td>こどもの病気</td><td colspan="2" class="department" id="Pediatrics">小児科</td></tr>
+                    <tr><td>健康診断時のデータ異常（血糖値、コレステロール値等）</td><td colspan="2" class="department" id="Cardiology">循環器内科</td></tr>
+                    <tr><td>こころの病気</td><td class="department" id="Psychosomaticmedicine">診療内科</td><td class="department" id="Psychiatry">精神科</td></tr>
+                    <tr><td>腎臓の病気（むくみ、蛋白尿、血尿、腎不全、透析）</td><td colspan="2" class="department" id="NephrologyandDiabetes">腎臓内科</td></tr>
+                    <tr><td>血液の病気（貧血、血が止まりづらいなど）</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
                 </table>
             </li>
             <li class="hide">
                 <table class="index">
-                    <tr><td>あ行</td><td>か行</td><td>さ行</td><td>た行</td><td>な行</td></tr>
-                    <tr><td>は行</td><td>ま行</td><td>や行</td><td>ら行</td><td>わ行</td></tr>
-
-                    <!--<tr><td class="index">あ行</td><td class="index">か行</td><td class="index">さ行</td><td class="index">た行</td><td class="index">な行</td></tr>
-                    <tr><td class="index">は行</td><td class="index">ま行</td><td class="index">や行</td><td class="index">ら行</td><td class="index">わ行</td></tr>-->
+                    <tr><td id="select_a">あ行</td><td id="select_k">か行</td><td id="select_s">さ行</td><td id="select_t">た行</td><td id="select_n">な行</td></tr>
+                    <tr><td id="select_h">は行</td><td id="select_m">ま行</td><td id="select_y">や行</td><td id="select_r">ら行</td><td id="select_w">わ行</td></tr>
                 </table>
                 <!--あ行-->
-                <p class="subtitle">あ行</p>
+                <p class="subtitle" id="aline">あ行</p>
                 <table>
-                    <tr><th>病名</th><th colspan="2">診療科</th></tr>
-                    <tr><td>悪性リンパ腫</td><td colspan="2">血液内科</td></tr>
-                    <tr><td>アルツハイマー病</td><td colspan="2">脳神経内科</td></tr>
-                    <tr><td>アレルギー性鼻炎</td><td colspan="2">耳鼻咽喉科</td></tr>
-                    <tr><td>Ｅ型肝炎</td><td colspan="2">消化器内科</td></tr>
-                    <tr><td>胃癌</td><td>消化器内科</td><td>消化器外科</td></tr>
-                    <tr><td>胃・十二指腸潰瘍</td><td colspan="2">消化器内科</td></tr>
-                    <tr><td>ウイルス性肝炎</td><td colspan="2">消化器内科</td></tr>
-                    <tr><td>Ａ型肝炎</td><td colspan="2">消化器内科</td></tr>
-                    <tr><td>炎症性腸疾患</td><td colspan="2">消化器内科</td></tr>
-                    <tr><td>黄斑円孔</td><td colspan="2">眼科</td></tr>
-                    <tr><td>黄斑硝子体牽引症候群</td><td colspan="2">眼科</td></tr>
-                    <tr><td>黄斑上膜</td><td colspan="2">眼科</td></tr>
+                    <tr><th class="symptoms">病名</th><th colspan="2" class="department">診療科</th></tr>
+                    <tr><td>悪性リンパ腫</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
+                    <tr><td>アルツハイマー病</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
+                    <tr><td>アレルギー性鼻炎</td><td colspan="2" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
+                    <tr><td>Ｅ型肝炎</td><td colspan="2" class="department" id="Gastroenterology">消化器内科</td></tr>
+                    <tr><td>胃癌</td><td class="department" id="Gastroenterology">消化器内科</td><td class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>胃・十二指腸潰瘍</td><td colspan="2" class="department" id="Gastroenterology">消化器内科</td></tr>
+                    <tr><td>ウイルス性肝炎</td><td colspan="2" class="department" id="Gastroenterology">消化器内科</td></tr>
+                    <tr><td>Ａ型肝炎</td><td colspan="2" class="department" id="Gastroenterology">消化器内科</td></tr>
+                    <tr><td>炎症性腸疾患</td><td colspan="2" class="department" id="Gastroenterology">消化器内科</td></tr>
+                    <tr><td>黄斑円孔</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
+                    <tr><td>黄斑硝子体牽引症候群</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
+                    <tr><td>黄斑上膜</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
                 </table>
 
                 <!--か行-->
-                <p class="subtitle">か行</p>
+                <p class="subtitle" id="kline">か行</p>
                 <table>
-                    <tr><th>病名</th><th colspan="2">診療科</th></tr>
-                    <tr><td>下腿慢性骨髄炎</td><td colspan="2">形成再建外科</td></tr>
-                    <tr><td>加齢黄斑変性</td><td colspan="2">眼科</td></tr>
-                    <tr><td>間質性膀胱炎</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>疥癬</td><td colspan="2">皮膚科</td></tr>
-                    <tr><td>肝癌</td><td>消化器内科</td><td>消化器外科</td></tr>
-                    <tr><td>乾癬</td><td colspan="2">皮膚科</td></tr>
-                    <tr><td>顔面骨骨折</td><td colspan="2">形成再建外科</td></tr>
-                    <tr><td>気管、気管支狭窄</td><td colspan="2">呼吸器外科</td></tr>
-                    <tr><td>逆流性食道炎</td><td colspan="2">消化器内科</td></tr>
-                    <tr><td>急性骨髄性白血病</td><td colspan="2">血液内科</td></tr>
-                    <tr><td>急性虫垂炎</td><td colspan="2">消化器外科</td></tr>
-                    <tr><td>急性リンパ性白血病</td><td colspan="2">血液内科</td></tr>
-                    <tr><td>ギラン・バレー症候群</td><td colspan="2">脳神経内科</td></tr>
-                    <tr><td>キーンベック病</td><td colspan="2">整形外科</td></tr>
-                    <tr><td>月経前緊張症</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>欠損指の再建</td><td colspan="2">形成再建外科</td></tr>
-                    <tr><td>原発性肺癌</td><td colspan="2">呼吸器外科</td></tr>
-                    <tr><td>高血圧症</td><td colspan="2">糖尿病・代謝・内分泌センター</td></tr>
-                    <tr><td>合指症</td><td colspan="2">形成再建外科</td></tr>
-                    <tr><td>甲状腺機能亢進症（特にバセドウ病）</td><td colspan="2">糖尿病・代謝・内分泌センター</td></tr>
-                    <tr><td>甲状腺機能低下症（特に慢性甲状腺炎（橋本病））</td><td colspan="2">糖尿病・代謝・内分泌センター</td></tr>
-                    <tr><td>高尿酸血症（痛風）</td><td colspan="2">糖尿病・代謝・内分泌センター</td></tr>
-                    <tr><td>更年期障害</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>骨髄異形成症候群</td><td colspan="2">血液内科</td></tr>
-                    <tr><td>骨粗鬆症</td><td colspan="2">糖尿病・代謝・内分泌センター</td></tr>
-                    <tr><td>骨盤臓器脱</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>後発白内障</td><td colspan="2">眼科</td></tr>
+                    <tr><th class="symptoms">病名</th><th colspan="2" class="department">診療科</th></tr>
+                    <tr><td>下腿慢性骨髄炎</td><td colspan="2" class="department" id="PlasticandReconstructiveSurgery">形成外科</td></tr>
+                    <tr><td>加齢黄斑変性</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
+                    <tr><td>間質性膀胱炎</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>疥癬</td><td colspan="2" class="department" id="Dermatology">皮膚科</td></tr>
+                    <tr><td>肝癌</td><td class="department" id="Gastroenterology">消化器内科</td><td class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>乾癬</td><td colspan="2" class="department" id="Dermatology">皮膚科</td></tr>
+                    <tr><td>顔面骨骨折</td><td colspan="2" class="department" id="PlasticandReconstructiveSurgery">形成外科</td></tr>
+                    <tr><td>気管、気管支狭窄</td><td colspan="2" class="department" id="ThoracicSurgery">呼吸器外科</td></tr>
+                    <tr><td>逆流性食道炎</td><td colspan="2" class="department" id="Gastroenterology">消化器内科</td></tr>
+                    <tr><td>急性骨髄性白血病</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
+                    <tr><td>急性虫垂炎</td><td colspan="2" class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>急性リンパ性白血病</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
+                    <tr><td>ギラン・バレー症候群</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
+                    <tr><td>キーンベック病</td><td colspan="2" class="department" id="OrthopaedicSurgery">整形外科</td></tr>
+                    <tr><td>月経前緊張症</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>欠損指の再建</td><td colspan="2" class="department" id="PlasticandReconstructiveSurgery">形成外科</td></tr>
+                    <tr><td>原発性肺癌</td><td colspan="2" class="department" id="ThoracicSurgery">呼吸器外科</td></tr>
+                    <tr><td>高血圧症</td><td colspan="2" class="department" id="DepartmentofDiabetesandEndocrinology">糖尿病・代謝・内分泌センター</td></tr>
+                    <tr><td>合指症</td><td colspan="2" class="department" id="PlasticandReconstructiveSurgery">形成外科</td></tr>
+                    <tr><td>甲状腺機能亢進症（特にバセドウ病）</td><td colspan="2" class="department" id="DepartmentofDiabetesandEndocrinology">糖尿病・代謝・内分泌センター</td></tr>
+                    <tr><td>甲状腺機能低下症（特に慢性甲状腺炎（橋本病））</td><td colspan="2" class="department" id="DepartmentofDiabetesandEndocrinology">糖尿病・代謝・内分泌センター</td></tr>
+                    <tr><td>高尿酸血症（痛風）</td><td colspan="2" class="department" id="DepartmentofDiabetesandEndocrinology">糖尿病・代謝・内分泌センター</td></tr>
+                    <tr><td>更年期障害</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>骨髄異形成症候群</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
+                    <tr><td>骨粗鬆症</td><td colspan="2" class="department" id="DepartmentofDiabetesandEndocrinology">糖尿病・代謝・内分泌センター</td></tr>
+                    <tr><td>骨盤臓器脱</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>後発白内障</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
                 </table>
 
                 <!--さ行-->
-                <p class="subtitle">さ行</p>
+                <p class="subtitle" id="sline">さ行</p>
                 <table>
-                    <tr><th>病名</th><th colspan="2">診療科</th></tr>
-                    <tr><td>再生不良性貧血</td><td colspan="2">血液内科</td></tr>
-                    <tr><td>Ｃ型肝炎</td><td colspan="2">消化器内科</td></tr>
-                    <tr><td>子宮外妊娠</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>子宮筋腫</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>子宮頸がん</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>子宮体がん</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>子宮内膜症</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>耳硬化症</td><td colspan="2">耳鼻咽喉科</td></tr>
-                    <tr><td>脂質異常症</td><td colspan="2">糖尿病・代謝・内分泌センター</td></tr>
-                    <tr><td>自然気胸</td><td colspan="2">呼吸器外科</td></tr>
-                    <tr><td>脂肪肝・NASH</td><td colspan="2">消化器内科</td></tr>
-                    <tr><td>縦隔腫瘍</td><td colspan="2">呼吸器外科</td></tr>
-                    <tr><td>重症筋無力症</td><td colspan="2">脳神経内科</td></tr>
-                    <tr><td>手根管症候群</td><td colspan="2">整形外科</td></tr>
-                    <tr><td>小児泌尿器科疾患</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>食道がん</td><td>消化器内科</td><td>消化器外科</td></tr>
-                    <tr><td>痔瘻</td><td colspan="2">消化器外科</td></tr>
-                    <tr><td>神経内分泌腫瘍</td><td colspan="2">消化器外科</td></tr>
-                    <tr><td>腎細胞癌</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>真珠腫性中耳炎</td><td colspan="2">耳鼻咽喉科</td></tr>
-                    <tr><td>膵臓癌</td><td>消化器内科</td><td>消化器外科</td></tr>
-                    <tr><td>睡眠時無呼吸症候群</td><td colspan="2">脳神経内科</td></tr>
-                    <tr><td>性器クラミジア感染症</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>性器脱（子宮脱、膣脱）</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>切断指（肢）</td><td colspan="2">形成再建外科</td></tr>
-                    <tr><td>線維腺腫</td><td colspan="2">乳腺外科</td></tr>
-                    <tr><td>前立腺癌</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>前立腺肥大症</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>鼠径ヘルニア</td><td colspan="2">消化器外科</td></tr>
+                    <tr><th class="symptoms">病名</th><th colspan="2" class="department">診療科</th></tr>
+                    <tr><td>再生不良性貧血</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
+                    <tr><td>Ｃ型肝炎</td><td colspan="2" class="department" id="Gastroenterology">消化器内科</td></tr>
+                    <tr><td>子宮外妊娠</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>子宮筋腫</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>子宮頸がん</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>子宮体がん</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>子宮内膜症</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>耳硬化症</td><td colspan="2" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
+                    <tr><td>脂質異常症</td><td colspan="2" class="department" id="DepartmentofDiabetesandEndocrinology">糖尿病・代謝・内分泌センター</td></tr>
+                    <tr><td>自然気胸</td><td colspan="2" class="department" id="ThoracicSurgery">呼吸器外科</td></tr>
+                    <tr><td>脂肪肝・NASH</td><td colspan="2" class="department" id="Gastroenterology">消化器内科</td></tr>
+                    <tr><td>縦隔腫瘍</td><td colspan="2" class="department" id="ThoracicSurgery">呼吸器外科</td></tr>
+                    <tr><td>重症筋無力症</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
+                    <tr><td>手根管症候群</td><td colspan="2" class="department" id="OrthopaedicSurgery">整形外科</td></tr>
+                    <tr><td>小児泌尿器科疾患</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>食道がん</td><td class="department" id="Gastroenterology">消化器内科</td><td class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>痔瘻</td><td colspan="2" class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>神経内分泌腫瘍</td><td colspan="2" class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>腎細胞癌</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>真珠腫性中耳炎</td><td colspan="2" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
+                    <tr><td>膵臓癌</td><td class="department" id="Gastroenterology">消化器内科</td><td class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>睡眠時無呼吸症候群</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
+                    <tr><td>性器クラミジア感染症</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>性器脱（子宮脱、膣脱）</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>切断指（肢）</td><td colspan="2" class="department" id="PlasticandReconstructiveSurgery">形成外科</td></tr>
+                    <tr><td>線維腺腫</td><td colspan="2" class="department" id="Breastsurgery">乳腺外科</td></tr>
+                    <tr><td>前立腺癌</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>前立腺肥大症</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>鼠径ヘルニア</td><td colspan="2" class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
                 </table>
 
                 <!--た行-->
-                <p class="subtitle">た行</p>
+                <p class="subtitle" id="tline">た行</p>
                 <table>
-                    <tr><th>病名</th><th colspan="2">診療科</th></tr>
-                    <tr><td>帯状疱疹</td><td colspan="2">皮膚科</td></tr>
-                    <tr><td>大腸がん</td><td>消化器内科</td><td>消化器外科</td></tr>
-                    <tr><td>多指症</td><td colspan="2">形成再建外科</td></tr>
-                    <tr><td>多発性硬化症</td><td colspan="2">脳神経内科</td></tr>
-                    <tr><td>多発性骨髄腫</td><td colspan="2">血液内科</td></tr>
-                    <tr><td>男子性機能障害</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>胆石症</td><td colspan="2">消化器外科</td></tr>
-                    <tr><td>丹毒・蜂窩織炎</td><td colspan="2">皮膚科</td></tr>
-                    <tr><td>胆道系感染（急性胆のう炎・急性胆管炎）</td><td colspan="2">消化器内科</td></tr>
-                    <tr><td>TFCC損傷</td><td colspan="2">整形外科</td></tr>
-                    <tr><td>虫垂炎</td><td colspan="2">消化器外科</td></tr>
-                    <tr><td>転移性肺腫瘍</td><td colspan="2">呼吸器外科</td></tr>
-                    <tr><td>てんかん</td><td colspan="2">脳神経内科</td></tr>
-                    <tr><td>糖尿病</td><td colspan="2">糖尿病・代謝・内分泌センター</td></tr>
-                    <tr><td>糖尿病網膜症</td><td colspan="2">眼科</td></tr>
-                    <tr><td>特発性血小板減少性紫斑病</td><td colspan="2">血液内科</td></tr>
+                    <tr><th class="symptoms">病名</th><th colspan="2" class="department">診療科</th></tr>
+                    <tr><td>帯状疱疹</td><td colspan="2" class="department" id="Dermatology">皮膚科</td></tr>
+                    <tr><td>大腸がん</td><td class="department" id="Gastroenterology">消化器内科</td><td class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>多指症</td><td colspan="2" class="department" id="PlasticandReconstructiveSurgery">形成外科</td></tr>
+                    <tr><td>多発性硬化症</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
+                    <tr><td>多発性骨髄腫</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
+                    <tr><td>男子性機能障害</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>胆石症</td><td colspan="2" class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>丹毒・蜂窩織炎</td><td colspan="2" class="department" id="Dermatology">皮膚科</td></tr>
+                    <tr><td>胆道系感染（急性胆のう炎・急性胆管炎）</td><td colspan="2" class="department" id="Gastroenterology">消化器内科</td></tr>
+                    <tr><td>TFCC損傷</td><td colspan="2" class="department" id="OrthopaedicSurgery">整形外科</td></tr>
+                    <tr><td>虫垂炎</td><td colspan="2" class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>転移性肺腫瘍</td><td colspan="2" class="department" id="ThoracicSurgery">呼吸器外科</td></tr>
+                    <tr><td>てんかん</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
+                    <tr><td>糖尿病</td><td colspan="2" class="department" id="DepartmentofDiabetesandEndocrinology">糖尿病・代謝・内分泌センター</td></tr>
+                    <tr><td>糖尿病網膜症</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
+                    <tr><td>特発性血小板減少性紫斑病</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
                 </table>
 
                 <!--な行-->
-                <p class="subtitle">な行</p>
+                <p class="subtitle" id="nline">な行</p>
                 <table>
-                    <tr><th>病名</th><th colspan="2">診療科</th></tr>
-                    <tr><td>内痔核</td><td colspan="2">消化器外科</td></tr>
-                    <tr><td>乳がん</td><td colspan="2">乳腺外科</td></tr>
-                    <tr><td>乳がん術後の乳房再建</td><td colspan="2">形成再建外科</td></tr>
-                    <tr><td>乳腺症</td><td colspan="2">乳腺外科</td></tr>
-                    <tr><td>尿路結石症</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>脳炎・髄膜炎</td><td colspan="2">脳神経内科</td></tr>
-                    <tr><td>膿胸</td><td colspan="2">呼吸器外科</td></tr>
-                    <tr><td>脳梗塞</td><td colspan="2">脳神経内科</td></tr>
+                    <tr><th class="symptoms">病名</th><th colspan="2" class="department">診療科</th></tr>
+                    <tr><td>内痔核</td><td colspan="2" class="department" id="GastrointestinalSurgery">消化器外科</td></tr>
+                    <tr><td>乳がん</td><td colspan="2" class="department" id="Breastsurgery">乳腺外科</td></tr>
+                    <tr><td>乳がん術後の乳房再建</td><td colspan="2" class="department" id="PlasticandReconstructiveSurgery">形成外科</td></tr>
+                    <tr><td>乳腺症</td><td colspan="2" class="department" id="Breastsurgery">乳腺外科</td></tr>
+                    <tr><td>尿路結石症</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>脳炎・髄膜炎</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
+                    <tr><td>膿胸</td><td colspan="2" class="department" id="ThoracicSurgery">呼吸器外科</td></tr>
+                    <tr><td>脳梗塞</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
                 </table>
 
                 <!--は行-->
-                <p class="subtitle">は行</p>
+                <p class="subtitle" id="hline">は行</p>
                 <table>
-                    <tr><th>病名</th><th colspan="2">診療科</th></tr>
-                    <tr><td>パーキンソン病</td><td colspan="2">脳神経内科</td></tr>
-                    <tr><td>白内障</td><td colspan="2">眼科</td></tr>
-                    <tr><td>Ｂ型肝炎</td><td colspan="2">消化器内科</td></tr>
-                    <tr><td>鼻中隔彎曲症</td><td colspan="2">耳鼻咽喉科</td></tr>
-                    <tr><td>肥満</td><td colspan="2">糖尿病・代謝・内分泌センター</td></tr>
-                    <tr><td>腹圧性尿失禁</td><td colspan="2">泌尿器科</td></tr>
-                    <tr><td>副腎疾患</td><td colspan="2">糖尿病・代謝・内分泌センター</td></tr>
-                    <tr><td>副鼻腔炎</td><td colspan="2">耳鼻咽喉科</td></tr>
-                    <tr><td>片頭痛</td><td colspan="2">脳神経内科</td></tr>
-                    <tr><td>膀胱癌</td><td colspan="2">泌尿器科</td></tr>
+                    <tr><th class="symptoms">病名</th><th colspan="2" class="department">診療科</th></tr>
+                    <tr><td>パーキンソン病</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
+                    <tr><td>白内障</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
+                    <tr><td>Ｂ型肝炎</td><td colspan="2" class="department" id="Gastroenterology">消化器内科</td></tr>
+                    <tr><td>鼻中隔彎曲症</td><td colspan="2" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
+                    <tr><td>肥満</td><td colspan="2" class="department" id="DepartmentofDiabetesandEndocrinology">糖尿病・代謝・内分泌センター</td></tr>
+                    <tr><td>腹圧性尿失禁</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
+                    <tr><td>副腎疾患</td><td colspan="2" class="department" id="DepartmentofDiabetesandEndocrinology">糖尿病・代謝・内分泌センター</td></tr>
+                    <tr><td>副鼻腔炎</td><td colspan="2" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
+                    <tr><td>片頭痛</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
+                    <tr><td>膀胱癌</td><td colspan="2" class="department" id="Urology">泌尿器科</td></tr>
                 </table>
 
                 <!--ま行-->
-                <p class="subtitle">ま行</p>
+                <p class="subtitle" id="mline">ま行</p>
                 <table>
-                    <tr><th>病名</th><th colspan="2">診療科</th></tr>
-                    <tr><td>慢性炎症性脱髄性多発神経炎（CIDP）</td><td colspan="2">脳神経内科</td></tr>
-                    <tr><td>慢性関節リウマチ</td><td colspan="2">整形外科</td></tr>
-                    <tr><td>慢性骨髄性白血病</td><td colspan="2">血液内科</td></tr>
-                    <tr><td>慢性骨髄増殖性疾患</td><td colspan="2">血液内科</td></tr>
-                    <tr><td>慢性中耳炎</td><td colspan="2">耳鼻咽喉科</td></tr>
-                    <tr><td>慢性リンパ性白血病</td><td colspan="2">血液内科</td></tr>
-                    <tr><td>網膜円孔、網膜裂孔</td><td colspan="2">眼科</td></tr>
-                    <tr><td>網膜静脈閉塞症</td><td colspan="2">眼科</td></tr>
-                    <tr><td>網膜剥離</td><td colspan="2">眼科</td></tr>
+                    <tr><th class="symptoms">病名</th><th colspan="2" class="department">診療科</th></tr>
+                    <tr><td>慢性炎症性脱髄性多発神経炎（CIDP）</td><td colspan="2" class="department" id="Neurology">脳神経内科</td></tr>
+                    <tr><td>慢性関節リウマチ</td><td colspan="2" class="department" id="OrthopaedicSurgery">整形外科</td></tr>
+                    <tr><td>慢性骨髄性白血病</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
+                    <tr><td>慢性骨髄増殖性疾患</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
+                    <tr><td>慢性中耳炎</td><td colspan="2" class="department" id="Otolaryngology">耳鼻咽喉科</td></tr>
+                    <tr><td>慢性リンパ性白血病</td><td colspan="2" class="department" id="Hematology">血液内科</td></tr>
+                    <tr><td>網膜円孔、網膜裂孔</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
+                    <tr><td>網膜静脈閉塞症</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
+                    <tr><td>網膜剥離</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
                 </table>
 
                 <!--や行-->
-                <p class="subtitle">や行</p>
+                <p class="subtitle" id="yline">や行</p>
                 <table>
-                    <tr><th>病名</th><th colspan="2">診療科</th></tr>
+                    <tr><th class="symptoms">病名</th><th colspan="2" class="department">診療科</th></tr>
                     <tr><td></td><td colspan="2"></td></tr>
                     <tr><td></td><td colspan="2"></td></tr>
 
                 </table>
 
                 <!--ら行-->
-                <p class="subtitle">ら行</p>
+                <p class="subtitle" id="rline">ら行</p>
                 <table>
-                    <tr><th>病名</th><th colspan="2">診療科</th></tr>
-                    <tr><td>卵巣がん</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>卵巣腫瘍（良性）</td><td colspan="2">婦人科</td></tr>
-                    <tr><td>緑内障</td><td colspan="2">眼科</td></tr>
+                    <tr><th class="symptoms">病名</th><th colspan="2" class="department">診療科</th></tr>
+                    <tr><td>卵巣がん</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>卵巣腫瘍（良性）</td><td colspan="2" class="department" id="Gynecology">婦人科</td></tr>
+                    <tr><td>緑内障</td><td colspan="2" class="department" id="Ophthalmology">眼科</td></tr>
                 </table>
 
                 <!--わ行-->
-                <p class="subtitle">わ行</p>
+                <p class="subtitle" id="wline">わ行</p>
                 <table>
-                    <tr><th>病名</th><th colspan="2">診療科</th></tr>
+                    <tr><th class="symptoms">病名</th><th colspan="2" class="department">診療科</th></tr>
                     <tr><td></td><td colspan="2"></td></tr>
                     <tr><td></td><td colspan="2"></td></tr>
                 </table>
-
-
-
-
-
-
             </li>
         </ul>
     </div>

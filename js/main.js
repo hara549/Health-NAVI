@@ -2,6 +2,12 @@ $(function () {
 
     'use strict';
 
+    //診療科検索画面から遷移時、セレクトボックスの初期値を設定する
+    var query = location.search;
+    var value = query.split('=');
+    var department = decodeURIComponent(value[1]);
+    $('#selectbox').val(department);
+
     //google map
     var map;
     var service;

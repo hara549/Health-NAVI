@@ -76,7 +76,7 @@ header {
     }
 
 /*index.html*/
-.department {
+.department_index {
     width: 90%;
     margin: 20px 0;
 }
@@ -172,3 +172,20 @@ header {
             color: #808080;
         }
 
+.part {
+  width: 7%;
+}
+.symptoms {
+  width: 30%;
+}
+.department,.department_th  {
+  width: 20%;
+}
+.department {
+  color: #0000cd;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.department:hover {
+  opacity: 0.7;
+}
