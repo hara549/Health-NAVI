@@ -1,6 +1,6 @@
 /*common*/
 .container {
-    width: 90%;
+    width: 60%;
     margin: 0 auto;
 }
 
@@ -95,7 +95,7 @@ header {
     margin-bottom: 7px;
 }
 
-#serchbox {
+#pac-input {
     border-radius: 5px;
     height: 35px;
     padding: 0;

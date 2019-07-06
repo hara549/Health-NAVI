@@ -2,117 +2,185 @@ $(function () {
 
     'use strict';
 
-    //f—Ã‰ÈŒŸõ‰æ–Ê‚©‚ç‘JˆÚAƒZƒŒƒNƒgƒ{ƒbƒNƒX‚Ì‰Šú’l‚ğİ’è‚·‚é
+    //è¨ºç™‚ç§‘æ¤œç´¢ã‹ã‚‰é·ç§»æ™‚ã€ã‚»ãƒ¬ã‚¯ãƒˆãƒœãƒƒã‚¯ã‚¹ã®åˆæœŸå€¤ã‚’è¨­å®šã™ã‚‹
     var query = location.search;
     var value = query.split('=');
     var department = decodeURIComponent(value[1]);
     $('#selectbox').val(department);
 
-    //google map
-    var map;
-    var service;
-    //‰Šú’l‚ğ“Œ‹“sa’J‹æ‚Æ‚·‚é
-    var pyrmont = new google.maps.LatLng(35.658034, 139.701636);
-    createMap(pyrmont)
+    initAutocomplete();
 
-
-    // Œ»İ’næ“¾
-    document.getElementById('getcurrentlocation').onclick = function () {
-        geoLocationInit();
-    }
-
-    function geoLocationInit() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(success, fail);
-
-        } else {
-            createMap(pyrmont);
-        }
-    }
-
-    // success
-    function success(position) {
-        var currentLat = position.coords.latitude;
-        var currentLng = position.coords.longitude;
-
-        var pyrmont = new google.maps.LatLng(currentLat, currentLng);
-
-        createMap(pyrmont)
-
-        CurrentPositionMarker(pyrmont);
-    }
-
-    // fail
-    function fail(pyrmont) {
-        createMap(pyrmont);
-    }
-
-    function createMap(pyrmont) {
-
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: pyrmont,
-            zoom: 15
-        });
-        nearbysearch(pyrmont)
-    }
-
-    function createMarker(latlng, icn, place) {
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map
+    function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 35.658034, lng: 139.701636},
+          zoom: 13,
+          mapTypeId: 'roadmap'
         });
 
-        var placename = place.name;
-        // ‚«o‚µ‚É{İ‚Ì–¼‘O‚ğ–„‚ß‚Ş
-        var contentString = `<div class="sample"><p id="place_name">${placename}</p></div>`;
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-        // ‚«o‚µ
-        var infoWindow = new google.maps.InfoWindow({ // ‚«o‚µ‚Ì’Ç‰Á
-            content: contentString// ‚«o‚µ‚É•\¦‚·‚é“à—e
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
         });
 
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
 
-        marker.addListener('click', function () { // ƒ}[ƒJ[‚ğƒNƒŠƒbƒN‚µ‚½‚Æ‚«
-            infoWindow.open(map, marker); // ‚«o‚µ‚Ì•\¦
-        });
+          if (places.length == 0) {
+            return;
+          }
 
-    }
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
 
-    // Œ»İ’n‚ÌƒAƒCƒRƒ“‚ğ•\¦
-    function CurrentPositionMarker(pyrmont) {
-        var image = 'http://i.stack.imgur.com/orZ4x.png';
-        var marker = new google.maps.Marker({
-            position: pyrmont,
-            map: map,
-            icon: image
-        });
-        marker.setMap(map);
-    }
-
-    // ü•Ó‚Ì•a‰@‚ğŒŸõ
-    function nearbysearch(pyrmont) {
-        var request = {
-            location: pyrmont,
-            radius: '1500',
-            type: ['hospital']
-            //type: https://developers.google.com/places/supported_types
-        };
-
-        service = new google.maps.places.PlacesService(map);
-        service.nearbySearch(request, callback);
-
-        function callback(results, status) {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
-                //æ“¾‚µ‚½•a‰@î•ñ‚ğ‚»‚ê‚¼‚êcreateMarker‚É“ü‚ê‚ÄAƒ}[ƒJ[‚ğì¬
-                for (var i = 0; i < results.length; i++) {
-                    var place = results[i];
-                    //console.log(place)
-                    var latlng = place.geometry.location;
-                    var icn = place.icon;
-
-                    createMarker(latlng, icn, place);
-                }
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
             }
-        }
-    }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+
+
+
+
+    // //google map
+    // var map;
+    // var service;
+    // //åˆæœŸä½ç½®ã‚’æ±äº¬éƒ½æ¸‹è°·é§…ã¨ã™ã‚‹
+    // var pyrmont = new google.maps.LatLng(35.658034, 139.701636);
+    // createMap(pyrmont)
+    //
+    //
+    // // ç¾åœ¨åœ°æ¤œç´¢ãƒœã‚¿ãƒ³æŠ¼ä¸‹æ™‚
+    // document.getElementById('getcurrentlocation').onclick = function () {
+    //     geoLocationInit();
+    // }
+    //
+    // function geoLocationInit() {
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.getCurrentPosition(success, fail);
+    //
+    //     } else {
+    //         createMap(pyrmont);
+    //     }
+    // }
+    //
+    // // success
+    // function success(position) {
+    //     var currentLat = position.coords.latitude;
+    //     var currentLng = position.coords.longitude;
+    //
+    //     var pyrmont = new google.maps.LatLng(currentLat, currentLng);
+    //
+    //     createMap(pyrmont)
+    //
+    //     CurrentPositionMarker(pyrmont);
+    // }
+    //
+    // // fail
+    // function fail(pyrmont) {
+    //     createMap(pyrmont);
+    // }
+    //
+    // function createMap(pyrmont) {
+    //
+    //     map = new google.maps.Map(document.getElementById('map'), {
+    //         center: pyrmont,
+    //         zoom: 15
+    //     });
+    //     nearbysearch(pyrmont)
+    // }
+    //
+    // function createMarker(latlng, icn, place) {
+    //     var marker = new google.maps.Marker({
+    //         position: latlng,
+    //         map: map
+    //     });
+    //
+    //     var placename = place.name;
+    //     var contentString = `<div class="sample"><p id="place_name">${placename}</p></div>`;
+    //
+    //     var infoWindow = new google.maps.InfoWindow({
+    //         content: contentString
+    //     });
+    //
+    //
+    //     marker.addListener('click', function () {
+    //         infoWindow.open(map, marker);
+    //     });
+    //
+    // }
+    //
+    // // ç¾åœ¨åœ°ã®ãƒãƒ¼ã‚«ãƒ¼ã‚’è¨­å®šã™ã‚‹
+    // function CurrentPositionMarker(pyrmont) {
+    //     var image = 'http://i.stack.imgur.com/orZ4x.png';
+    //     var marker = new google.maps.Marker({
+    //         position: pyrmont,
+    //         map: map,
+    //         icon: image
+    //     });
+    //     marker.setMap(map);
+    // }
+    //
+    // // å‘¨è¾ºã®ç—…é™¢ã‚’æ¤œç´¢ã™ã‚‹
+    // function nearbysearch(pyrmont) {
+    //     var request = {
+    //         location: pyrmont,
+    //         radius: '1500',
+    //         type: ['hospital']
+    //         //type: https://developers.google.com/places/supported_types
+    //     };
+    //
+    //     service = new google.maps.places.PlacesService(map);
+    //     service.nearbySearch(request, callback);
+    //
+    //     function callback(results, status) {
+    //         if (status == google.maps.places.PlacesServiceStatus.OK) {
+    //             for (var i = 0; i < results.length; i++) {
+    //                 var place = results[i];
+    //                 var latlng = place.geometry.location;
+    //                 var icn = place.icon;
+    //
+    //                 createMarker(latlng, icn, place);
+    //             }
+    //         }
+    //     }
+    // }
 });
