@@ -93,6 +93,11 @@ header {
     border-radius: 5px;
     height: 40px;
     margin-bottom: 7px;
+    cursor: pointer;
+}
+
+#getcurrentlocation:hover {
+  background-color: rgba(51,185,19,0.3);
 }
 
 #pac-input {
@@ -107,6 +112,29 @@ header {
     height: 400px;
     margin: 0 auto;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
+
+#results {
+  width: 100%;
+  margin: 20px auto 10px auto;
+  border: 1px solid rgba(51,185,19,0.3);
+  /* box-shadow: 3px 3px 3px rgba(51,185,19,0.3); */
+}
+
+#result_title {
+  height: 35px;
+  color: #333;
+  background-color: rgba(51,185,19,0.3);
+  padding-left: 5px;
+  padding-top: 15px;
+}
+#result {
+  padding-left: 5px;
+  border-bottom: 1px dashed rgba(51,185,19,0.3);
+}
+
+.fa-star {
+  color: rgb(238, 231, 64);
 }
 
 /*search.html*/
