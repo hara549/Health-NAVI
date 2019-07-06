@@ -44,8 +44,6 @@ $(function () {
         searchBox.addListener('places_changed', function() {
           var department = $('#selectbox option:selected').text();
           var places = searchBox.getPlaces();
-          console.log(places);
-
 
           if (places.length == 0) {
             return;
@@ -213,7 +211,6 @@ $(function () {
 
                     createMarker(latlng, icn, place);
                 }
-                console.log(results);
                 //検索結果一覧を表示
                 var result = "";
                 var name;
