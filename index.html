@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+1p">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/introjs.css">
+
 </head>
 <body class="drawer drawer--left">
     <header>
@@ -22,16 +24,16 @@
             <ul class="drawer-menu">
                 <li><a href="index.html">トップ画面</a></li>
                 <li><a href="search.html">診療科検索</a></li>
-                <li><a href="#">チュートリアル</a></li>
+                <li><a href="#" id="tutorial">チュートリアル</a></li>
             </ul>
         </nav>
         <h1>Health NAVI</h1>
     </header>
     <div class="container">
-        <div class="department_index">
+        <div class="department_index" data-intro="診療科を選択します" data-step="1">
             <div id="select_dep">
                 <h2><i class="fas fa-chevron-circle-right" style="color: rgba(51,185,19,0.9)"></i> 診療科選択</h2>
-                <select id="selectbox">
+                <select id="selectbox" data-intro="診療科が判明している場合はこちらから選択します" data-step="2">
                     <option value="Cardiology">循環器内科</option>
                     <option value="RespiratoryMedicine">呼吸器内科</option>
                     <option value="Gastroenterology">消化器内科</option>
@@ -70,15 +72,15 @@
                     <option value="DepartmentofDiabetesandEndocrinology">糖尿病・代謝・内分泌センター</option>
                 </select>
             </div>
-            <div id="serch_dep">
+            <div id="serch_dep" data-intro="診療科が分からない場合はこちらから症状または病名で検索します" data-step="3">
                 <h2><i class="fas fa-chevron-circle-right" style="color: rgba(51,185,19,0.9)"></i> 診療科がわからない場合</h2>
                 <a class="link" href="search.html"><i class="fas fa-angle-double-right"></i>診療科検索</a>
             </div>
         </div>
-        <div class="map_serch">
-            <button id="getcurrentlocation">現在地から検索</button>
-            <input id="pac-input" type="text" name="pac-input" value="" placeholder="場所を指定して検索" />
-            <div id="map"></div>
+        <div class="map_serch"  data-intro="診療科選択後、こちらから周辺の病院を検索します" data-step="4">
+            <button id="getcurrentlocation" data-intro="現在地周辺を検索する場合はこちらのボタンを押下します" data-step="5">現在地から検索</button>
+            <input id="pac-input" type="text" name="pac-input" value="" placeholder="場所を指定して検索" data-intro="住所を指定して検索する場合はこちらの検索ボックスに住所を入力して検索します" data-step="6" />
+            <div id="map" data-intro="検索結果がこちらに表示されます" data-step="7"></div>
             <div id="results"></div>
         </div>
     </div>
@@ -86,15 +88,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/iscroll.js"></script>
     <script src="js/drawer.min.js"></script>
-
+    <script src="js/intro.js"></script>
     <!-- google map api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqzZh1Jj0VfjsBrGhAQcFTarXj-NB5PZE&libraries=places" asyncdefer></script>
+    <script src="inc/googlemapapi.js"></script>
     <!-- js -->
     <script src="js/main.js" async></script>
     <script>
         $(function () {
             //ドロワーメニュー
             $('.drawer').drawer();
+
+            //チュートリアル開始
+            $('#tutorial').on('click', function() {
+              introJs().start();
+            });
         })
     </script>
 

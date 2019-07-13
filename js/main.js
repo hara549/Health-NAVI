@@ -19,6 +19,7 @@ $(function () {
       $('#pac-input').val(selectbox + "　");
     });
 
+    //googlemap表示
     initAutocomplete();
 
     function initAutocomplete() {
@@ -103,8 +104,6 @@ $(function () {
           map.fitBounds(bounds);
         });
       }
-
-
 
 
     // 現在地検索ボタン押下時
